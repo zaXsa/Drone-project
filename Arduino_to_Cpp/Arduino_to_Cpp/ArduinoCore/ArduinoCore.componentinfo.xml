@@ -52,7 +52,7 @@
 					<Attribute>template</Attribute>
 					<Category>source</Category>
 					<Condition>C Lib</Condition>
-					<FileContentHash>1nfHZVlOosS93vKLstHo5A==</FileContentHash>
+					<FileContentHash>X6OoM+Zz8Uh86z2aLDN+8Q==</FileContentHash>
 					<FileVersion></FileVersion>
 					<Name>templates/library.cpp</Name>
 					<SelectString>Main file (.cpp)</SelectString>
