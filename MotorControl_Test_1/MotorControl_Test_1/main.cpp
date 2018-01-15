@@ -45,16 +45,21 @@ int main(void){
 		Chello = ReceiveByte();
 		while (ReceiveByte()!='\n');
 		TransmitByte(Chello);
-		if (Chello == 'a'){
+		if (Chello == 's'){
 			OCR0A = 100;
 			OCR0B = 100;
 			OCR2A = 100;
 			OCR2B = 100;
-		} else if(Chello == 's'){
+		} else if(Chello == 'd'){
 			OCR0A = 200;
 			OCR0B = 200;
 			OCR2A = 200;
 			OCR2B = 200;
+		} else if(Chello == 'a'){
+			OCR0A = 0;
+			OCR0B = 0;
+			OCR2A = 0;
+			OCR2B = 0;
 		}
     }
 }
