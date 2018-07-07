@@ -9,11 +9,11 @@
 
 
 
-#define motor_steps 200;  //定義步進馬達每圈的步數  
-#define step_divisition 16;
-#define en_pin 5;
-#define cw_pin 6;
-#define clk_pin 7;
+#define motor_steps 200  //定義步進馬達每圈的步數  
+#define step_divisition 16
+#define en_pin NULL
+#define cw_pin 6
+#define clk_pin 7
 
 StepperDriver ss(motor_steps, step_divisition, en_pin, cw_pin, clk_pin);  
 
