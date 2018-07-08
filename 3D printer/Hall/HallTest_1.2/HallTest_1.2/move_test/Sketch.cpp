@@ -24,7 +24,7 @@ void setup() {
 	Serial.begin(9600);
 	Serial.print("Serial Test\n");
 
-	pinMode(inPin, INPUT);        // sets the digital pin 7 as input
+	pinMode(inPin, INPUT);        // sets the digital pin 8 as input
 
 	ss.setSpeed(160);
 	ss.powerEnable(true);
