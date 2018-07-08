@@ -19,6 +19,8 @@
 StepperDriver ss(motor_steps, step_divisition, en_pin, cw_pin, clk_pin);  
 
 int StepsTaken = 0;
+int ParsedInt, ParseInted;
+char C;
 
 void setup() { 
 	Serial.begin(9600);
@@ -33,9 +35,34 @@ void setup() {
 }
 
 void loop() {
-	if (!digitalRead(8)){
-		StepsTaken += 1;
-		ss.step(1);
+	C = Serial.read();
+
+	if (C == 'x'){
+		C = 'Z';
+		StepsTaken = 0;
+		ParsedInt = Serial.parseInt();
+		Serial.print(ParsedInt);
+		Serial.print("\n");
+		for (ParsedInt; ParsedInt > 0; ParsedInt--){
+			if (!digitalRead(8)){
+			StepsTaken += 1;
+			ss.step(1);
+			Serial.print(StepsTaken);
+			Serial.print(" Taken steps\n");
+			delay(20);
+			}
+		}
+	} else if (C == 'y'){
+		C = 'Z';
+		ParsedInt = Serial.parseInt();
+		for (ParsedInt; ParsedInt > 0; ParsedInt--){
+			ss.step(-1);
+		}
 	}
-	Serial.print(StepsTaken);
+	//if (!digitalRead(8)){
+	//	StepsTaken += 1;
+	//	ss.step(1);
+	//}
+
+	delay(200);
 }
