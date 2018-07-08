@@ -98,8 +98,7 @@ void StepperDriver::step(long steps_to_move, long steps_acc, long steps_dec)
 
 
 
-void StepperDriver::setDirection(long steps_to_move)
-{
+void StepperDriver::setDirection(long steps_to_move){
   if (steps_to_move < 0) {
     digitalWrite(cw_pin, HIGH);
   }
