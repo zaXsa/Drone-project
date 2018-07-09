@@ -87,12 +87,14 @@ void StepperDriver::Positioning()
 }
 
 /**
-  * @brief  This function sets the wanted revolutions per minute by changing the time interval between steps
-  * @param  Wanted revolutions per minute
-  * @retval The new step interval time 
+  * @brief  This function sets the wanted revolutions per minute by changing the time interval between steps based on the steps it takes for one mm
+  * @param  Wanted revolutions per minute, the steps it takes per mm and the given step devision 
+  * @retval The new step interval time in ms 
   */
 void StepperDriver::setSpeed(float WantedSpeed){
-  StepInterval = WantedSpeed / (StepsPermm * StepDevision)
+  StepInterval = (WantedSpeed / (StepsPermm * StepDevision))*1000;
+
+  // StepInterval = 60000/(WantedSpeed*MaxNumberOfSteps);
 }
 /**
   * @brief  This function enables or disables all driver 
